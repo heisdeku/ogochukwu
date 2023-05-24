@@ -21,9 +21,9 @@ function Login() {
         </div>
       </div>
       <section className="max-w-[430px] mx-auto pt-[180px]">
-        <h3 className="text-base font-bold text-3.2xl leading-[43px]">
+        <h2 className="text-base font-bold text-[32px] leading-[43px] mb-2">
           Agent Login
-        </h3>
+        </h2>
         <p className="leading-22">
           Enter your details and log back into your agent account
         </p>
