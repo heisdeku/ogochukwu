@@ -1,8 +1,10 @@
 import Input from "@/components/Input";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 
 function Login() {
+  const router = useRouter();
   return (
     <div className="min-h-screen overflow-hidden pt-8 mx-24 px-1">
       <div className="flex justify-between flex-row items-center">
@@ -43,7 +45,12 @@ function Login() {
           aria-label="button"
         >
           <p>Having troubles logging in?</p>
-          <button className="text-primary-300 ml-1">Reset password</button>
+          <button
+            onClick={() => router.push("/home")}
+            className="text-primary-300 ml-1"
+          >
+            Reset password
+          </button>
         </div>
       </section>
     </div>
