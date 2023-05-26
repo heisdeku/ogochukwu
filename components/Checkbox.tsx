@@ -4,28 +4,34 @@ type CheckboxProps = {
   label?: string | JSX.Element;
   checked?: boolean;
   disabled?: boolean;
+  onClick?: () => void;
 };
 
-const Checkbox = ({ label, checked, disabled = false }: CheckboxProps) => {
+const Checkbox = ({
+  label,
+  checked,
+  disabled = false,
+  onClick,
+}: CheckboxProps) => {
   const checked_styles = `bg-primary-300 border-none`;
   const disabled_styles = `opacity-20`;
-  const [isChecked, setIsChecked] = useState(checked);
+
   return (
     <button
       type="button"
       className="flex items-center gap-x-2 cursor-pointer relative select-none c-checkbox"
       onClick={() => {
-        setIsChecked(!isChecked);
+        onClick?.();
       }}
     >
       <input
-        checked={isChecked}
+        checked={checked}
         className="absolute opacity-0 cursor-pointer h-full w-full c-checkbox__input"
       />
       <div
         className={`c-checbox__container rounded-[4px] h-4 w-4 flex items-center justify-center border border-gray-400 ${
           disabled && disabled_styles
-        } ${!disabled && isChecked && checked_styles}`}
+        } ${!disabled && checked && checked_styles}`}
       >
         <svg
           width="10"
@@ -34,7 +40,7 @@ const Checkbox = ({ label, checked, disabled = false }: CheckboxProps) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={`${
-            isChecked ? "opacity-100" : "opacity-0"
+            checked ? "opacity-100" : "opacity-0"
           } duration-300 ease-linear`}
         >
           <path

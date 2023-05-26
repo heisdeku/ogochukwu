@@ -111,9 +111,38 @@
 body {
   font-size: 14px;
   font-weight: 500;
-  @apply text-gray-400
+  @apply text-gray-400;
 }
 
 input {
-  @apply outline-none border-none
+  @apply outline-none border-none;
+}
+
+.c-chat__time {
+  @apply text-gray-5 mx-auto text-center mb-8;
+}
+.c-chat__content {
+  @apply space-y-2 max-w-[60%];
+}
+.c-chat__content.sender {
+  @apply mr-auto;
+}
+.c-chat__content.receiver {
+  @apply ml-auto flex flex-col items-end;
+}
+
+.c-chat__content.receiver .c-chat__text {
+  @apply text-right;
+}
+
+.c-chat__status {
+  @apply rounded-[100px] w-fit px-[10px] py-[5px] uppercase mx-auto text-xs leading-4 h-[26px];
+}
+
+.c-chat__status.failed {
+  @apply bg-[#FFD9CC] text-primary-300;
+}
+
+.c-chat__status.success {
+  @apply text-green-200 bg-[#C1F1D5];
 }

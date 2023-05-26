@@ -18,6 +18,7 @@ module.exports = {
       "gray-500": "#E0E0E0",
       "gray-600": "#E6E6E6",
       "gray-800": "#B3B3B3",
+      "gray-5": "#999999",
       "gray-9": "#F2F2F2",
       "gray-10": "#FAFAFA",
       "green-200": "#27AE60",
@@ -49,7 +50,7 @@ module.exports = {
       boxShadow: {
         "menu-option": "inset 0px 0.5px 1px rgba(255, 255, 255, 0.07)",
         "chat-header-overlay": "0px 4px 60px rgba(0, 0, 0, 0.05)",
-        "chat-preview-shadow": "0px 4px 16px rgba(0, 0, 0, 0.03)"
+        "chat-preview-shadow": "0px 4px 16px rgba(0, 0, 0, 0.03)",
       },
       gap: {
         15: "60px",

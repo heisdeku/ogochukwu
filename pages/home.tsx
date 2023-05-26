@@ -1,7 +1,7 @@
 import Checkbox from "@/components/Checkbox";
 import Layout from "@/components/Layout";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 type CelebCategoryProps = {
   iconUrl: string;
@@ -44,7 +44,7 @@ type TableRowProps = {
 
 const TableRow: React.FC<TableRowProps> = ({
   index,
-  isSelected = false,
+  isSelected,
   transactionDate,
   transactionId,
   description,
@@ -133,6 +133,7 @@ const transactions = [
 ];
 
 export default function Home() {
+  const [allChecked, sedtAllChecked] = useState(false);
   return (
     <Layout>
       <section className="py-8 px-6">
@@ -315,7 +316,12 @@ export default function Home() {
           {/**table header */}
           <div className="bg-white h-12 border-b border-gray-500 rounded-t-tiny rounded-tr-tiny flex p-4">
             <div className="mr-8">
-              <Checkbox />
+              <Checkbox
+                onClick={() => {
+                  sedtAllChecked(!allChecked);
+                }}
+                checked={allChecked}
+              />
             </div>
             <div className="cursor-pointer w-[18.6%]">
               <button className="flex items-center gap-x-2 hover:opacity-75">
@@ -378,20 +384,21 @@ export default function Home() {
               </button>
             </div>
           </div>
-            {transactions?.map((transaction, i) => {
-              return (
-                <TableRow
-                  index={i}
-                  key={i}
-                  transactionDate={transaction?.date}
-                  transactionId={transaction?.id}
-                  status={transaction?.status}
-                  description={transaction?.description}
-                  category={transaction?.category}
-                  amount={transaction?.amount}
-                />
-              );
-            })}   
+          {transactions?.map((transaction, i) => {
+            return (
+              <TableRow
+                index={i}
+                key={i}
+                transactionDate={transaction?.date}
+                transactionId={transaction?.id}
+                status={transaction?.status}
+                description={transaction?.description}
+                category={transaction?.category}
+                amount={transaction?.amount}
+                isSelected={allChecked}
+              />
+            );
+          })}
         </section>
       </section>
     </Layout>
