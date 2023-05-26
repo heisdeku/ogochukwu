@@ -37,7 +37,10 @@ function Login() {
           />
           <Input type="password" label="Password" placeholder="*******" />
         </form>
-        <button className="w-full h-btn text-white bg-primary-300 rounded-tiny font-bold text-base-0 leading-5">
+        <button
+          onClick={() => router.push("/home")}
+          className="w-full h-btn text-white bg-primary-300 rounded-tiny font-bold text-base leading-5"
+        >
           Log in{" "}
         </button>
         <div
@@ -45,12 +48,7 @@ function Login() {
           aria-label="button"
         >
           <p>Having troubles logging in?</p>
-          <button
-            onClick={() => router.push("/home")}
-            className="text-primary-300 ml-1"
-          >
-            Reset password
-          </button>
+          <button className="text-primary-300 ml-1">Reset password</button>
         </div>
       </section>
     </div>
