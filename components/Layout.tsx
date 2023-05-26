@@ -5,6 +5,7 @@ import React from "react";
 
 type SidebarMenuOptionProps = {
   iconUrl: string;
+  activeIconUrl?: string;
   name?: string;
   link?: string;
   suffix?: React.ReactNode;
@@ -13,11 +14,13 @@ type SidebarMenuOptionProps = {
 
 const SidebarMenuOption: React.FC<SidebarMenuOptionProps> = ({
   iconUrl,
+  activeIconUrl,
   name,
   link,
   suffix,
   isActive,
 }) => {
+  const url = isActive ? activeIconUrl : iconUrl;
   return (
     <Link
       href={link || "/home˝"}
@@ -27,7 +30,7 @@ const SidebarMenuOption: React.FC<SidebarMenuOptionProps> = ({
     >
       <div className="flex items-center gap-x-3">
         <Image
-          src={iconUrl}
+          src={url || ""}
           alt={`${name} icon`}
           height={16}
           width={16}
@@ -68,7 +71,8 @@ const Layout: React.FC<{ children: any }> = ({ children }) => {
             <div className="w-full options">
               <SidebarMenuOption
                 isActive={router.pathname === "/home"}
-                iconUrl="/svgs/ic-db-overview.svg"
+                iconUrl="/svgs/ic-db-overview-inactive.svg"
+                activeIconUrl="/svgs/ic-db-overview.svg"
                 name="Overview"
                 link="/home"
               />
@@ -93,6 +97,7 @@ const Layout: React.FC<{ children: any }> = ({ children }) => {
               <SidebarMenuOption
                 isActive={router.pathname === "/chat"}
                 iconUrl="/svgs/ic-db-chats.svg"
+                activeIconUrl="/svgs/ic-db-chats-active.svg"
                 name="Chats"
                 link="/chat"
               />

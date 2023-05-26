@@ -122,7 +122,7 @@ input {
   @apply text-gray-5 mx-auto text-center mb-8;
 }
 .c-chat__content {
-  @apply space-y-2 max-w-[60%];
+  @apply space-y-2 max-w-[80%];
 }
 .c-chat__content.sender {
   @apply mr-auto;
