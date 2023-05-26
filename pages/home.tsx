@@ -15,7 +15,7 @@ const CelebCategory: React.FC<CelebCategoryProps> = ({
   percentage,
 }) => {
   return (
-    <div className="flex items-center h-9 rounded-tiny border border-gray-600 p-[10px] w-fit gap-x-2 text-base text-xs cursor-pointer">
+    <div className="flex items-center h-9 rounded-tiny border border-gray-600 p-[10px] w-fit gap-x-2 text-base-0 text-xs cursor-pointer">
       <div className="flex items-center gap-x-1">
         <Image
           className="w-4 h-4"
@@ -60,7 +60,7 @@ const TableRow: React.FC<TableRowProps> = ({
     <div
       className={`${
         index % 2 === 0 ? "bg-gray-10" : "bg-gray-9"
-      } h-[71px] w-full flex items-center p-4 text-base text-sm`}
+      } h-[71px] w-full flex items-center p-4 text-base-0 text-sm`}
     >
       <div className="mr-8">
         <Checkbox checked={isSelected} />
@@ -135,25 +135,25 @@ const transactions = [
 export default function Home() {
   return (
     <Layout>
-      <section className="py-8">
+      <section className="py-8 px-6">
         <aside className="grid gap-x-5 grid-cols-4">
           <div className="border border-gray-600 rounded-tiny h-[108px] p-6 space-y-3">
             <h4 className="text-gray-300 text-xs leading-4">
               Total No. of Fans
             </h4>
-            <h2 className="text-base text-2xl font-bold leading-8">56,266</h2>
+            <h2 className="text-base-0 text-2xl font-bold leading-8">56,266</h2>
           </div>
           <div className="border border-gray-600 rounded-tiny h-[108px] p-6 space-y-3">
             <h4 className="text-gray-300 text-xs leading-4">
               Total No. of Celebs
             </h4>
-            <h2 className="text-base text-2xl font-bold leading-8">15,737</h2>
+            <h2 className="text-base-0 text-2xl font-bold leading-8">15,737</h2>
           </div>
           <div className="border border-gray-600 rounded-tiny h-[108px] p-6 space-y-3">
             <h4 className="text-gray-300 text-xs leading-4">
               Total Commisions Earned
             </h4>
-            <h2 className="text-base text-2xl font-bold leading-8">
+            <h2 className="text-base-0 text-2xl font-bold leading-8">
               <span className="text-gray-600 mr-[2px] font-medium">₦</span>
               5,235,923
               <span className="text-sm font-medium ml-[2px]">.29</span>
@@ -163,7 +163,7 @@ export default function Home() {
             <h4 className="text-gray-300 text-xs leading-4">
               Total Transaction Amount
             </h4>
-            <h2 className="text-base text-2xl font-bold leading-8">
+            <h2 className="text-base-0 text-2xl font-bold leading-8">
               <span className="text-gray-600 mr-[2px] font-medium">₦</span>
               35,570,147
               <span className="text-sm font-medium ml-[2px]">.48</span>
@@ -173,7 +173,7 @@ export default function Home() {
         <aside className="w-full relative flex flex-row gap-x-5 mt-5 pb-6 border-b border-gray-500">
           <div className="rounded-tiny bg-white h-[400px] border border-gray-600 w-1/2 pl-6 pr-4 pt-4 pb-6">
             <div className="h-10 flex justify-between items-center w-full">
-              <h5 className="text-base text-2xl font-bold leading-8">
+              <h5 className="text-base-0 text-2xl font-bold leading-8">
                 Celebs by Career Category
               </h5>
               <button className="w-10 h-10 cursor-pointer bg-gray-10 border border-gray-600 rounded-full flex items-center justify-center hover:opacity-70">
@@ -252,7 +252,7 @@ export default function Home() {
             </svg>
             <div className="border-r mx-3 border-gray-600 h-full" />
             <input
-              className="bg-[transparent] flex-1 text-xs font-normal text-base placeholder:text-gray-800 placeholder:text-xs placeholder:leading-4 placeholder:font-normal"
+              className="bg-[transparent] flex-1 text-xs font-normal text-base-0 placeholder:text-gray-800 placeholder:text-xs placeholder:leading-4 placeholder:font-normal"
               placeholder="Search for transaction ID, date, category"
             />
           </div>
@@ -269,7 +269,7 @@ export default function Home() {
                 Category
               </span>
               <div className="flex justify-between gap-x-15 items-center">
-                <span className="text-base text-xs">All</span>
+                <span className="text-base-0 text-xs">All</span>
                 <Image
                   src={"/svgs/utility/arrow-down.svg"}
                   width={12}
@@ -290,7 +290,7 @@ export default function Home() {
                 Date filters
               </span>
               <button className="flex justify-between gap-x-15 items-center">
-                <span className="text-base text-xs truncate">Start Date</span>
+                <span className="text-base-0 text-xs truncate">Start Date</span>
                 <Image
                   src={"/svgs/utility/arrow-down.svg"}
                   width={12}
@@ -300,7 +300,7 @@ export default function Home() {
               </button>
               <div className="border-r border-gray-600 h-full" />
               <button className="flex justify-between gap-x-15 items-center">
-                <span className="text-base text-xs truncate">End Date</span>
+                <span className="text-base-0 text-xs truncate">End Date</span>
                 <Image
                   src={"/svgs/utility/arrow-down.svg"}
                   width={12}
@@ -378,7 +378,6 @@ export default function Home() {
               </button>
             </div>
           </div>
-          
             {transactions?.map((transaction, i) => {
               return (
                 <TableRow
@@ -392,8 +391,7 @@ export default function Home() {
                   amount={transaction?.amount}
                 />
               );
-            })}
-          
+            })}   
         </section>
       </section>
     </Layout>

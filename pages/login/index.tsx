@@ -23,7 +23,7 @@ function Login() {
         </div>
       </div>
       <section className="max-w-[430px] mx-auto pt-[180px]">
-        <h2 className="text-base font-bold text-[32px] leading-[43px] mb-2">
+        <h2 className="text-base-0 font-bold text-[32px] leading-[43px] mb-2">
           Agent Login
         </h2>
         <p className="leading-22">
@@ -37,7 +37,7 @@ function Login() {
           />
           <Input type="password" label="Password" placeholder="*******" />
         </form>
-        <button className="w-full h-btn text-white bg-primary-300 rounded-tiny font-bold text-base leading-5">
+        <button className="w-full h-btn text-white bg-primary-300 rounded-tiny font-bold text-base-0 leading-5">
           Log in{" "}
         </button>
         <div

@@ -44,7 +44,7 @@ const Layout: React.FC<{ children: any }> = ({ children }) => {
   const router = useRouter();
   return (
     <main className={`min-h-screen relative`}>
-      <aside className="fixed min-h-screen w-[287px] bg-base p-6">
+      <aside className="fixed min-h-screen w-[287px] bg-base-0 p-6">
         <div className="flex items-center justify-between pb-8 border-b border-gray-100">
           <Image
             src={"/logo-white.svg"}
@@ -200,7 +200,7 @@ const Layout: React.FC<{ children: any }> = ({ children }) => {
           </span>
         </div>
       </aside>
-      <section className="ml-[287px] px-6">{children}</section>
+      <section className="ml-[287px]">{children}</section>
     </main>
   );
 };

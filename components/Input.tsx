@@ -11,10 +11,10 @@ const Input: React.FC<InputProps> = ({ type, label, placeholder, suffix }) => {
   const [inputType, setInputType] = useState(type);
   return (
     <div className="cursor-pointer mb-6 block">
-      <label className="text-sm text-base capitalize">{label}</label>
+      <label className="text-sm text-base-0 capitalize">{label}</label>
       <div className="bg-secondary-500 rounded-tiny w-full h-[51px] mt-1.6 border border-secondary-300 p-4 flex items-center">
         <input
-          className="bg-[transparent] h-full text-base placeholder:font-normal shrink-0 flex-1"
+          className="bg-[transparent] h-full text-base-0 placeholder:font-normal shrink-0 flex-1"
           placeholder={placeholder}
           type={inputType}
         />

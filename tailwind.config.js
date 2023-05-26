@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      base: "#141414",
+      "base-0": "#141414",
       "base-200": "#1E1E1E",
       "primary-200": "#B92E00",
       "primary-300": "#FF5219",
@@ -48,6 +48,8 @@ module.exports = {
       },
       boxShadow: {
         "menu-option": "inset 0px 0.5px 1px rgba(255, 255, 255, 0.07)",
+        "chat-header-overlay": "0px 4px 60px rgba(0, 0, 0, 0.05)",
+        "chat-preview-shadow": "0px 4px 16px rgba(0, 0, 0, 0.03)"
       },
       gap: {
         15: "60px",
